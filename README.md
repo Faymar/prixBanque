@@ -223,5 +223,4 @@ Les services seront disponibles aux URL suivantes :
 
 ---
 
-## **Contributions**
-Les contributions sont les bienvenues ! Veuillez créer une branche et soumettre une **Pull Request**.
+# FIN DU PROJET
