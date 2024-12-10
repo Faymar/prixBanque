@@ -86,9 +86,9 @@ Pour chaque service (**GestionCompte**, **Facturation**, **Transaction**), suive
    ```
 
 Les services seront disponibles aux URL suivantes :
-- **GestionCompte :** [http://localhost:8081](http://localhost:8081)
-- **Facturation :** [http://localhost:8082](http://localhost:8082)
-- **Transaction :** [http://localhost:8083](http://localhost:8083)
+- **GestionCompte :** [http://localhost:8081](http://localhost:8082)
+- **Facturation :** [http://localhost:8082](http://localhost:8083)
+- **Transaction :** [http://localhost:8083](http://localhost:8084)
 
 ---
 
