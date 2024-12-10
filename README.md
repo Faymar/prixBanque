@@ -1,13 +1,13 @@
-#Guide d'installation et d'utilisation pour le projet PrixBanque
-###Ce guide explique comment configurer, installer, et utiliser le projet PrixBanque sur votre environnement local.
+# Guide d'installation et d'utilisation pour le projet PrixBanque
+### Ce guide explique comment configurer, installer, et utiliser le projet PrixBanque sur votre environnement local.
 
-##Prérequis
+## Prérequis
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
-###Outils nécessaires :
+### Outils nécessaires :
 
-Java 17 ou supérieur.
-Maven.
+- Java 17 ou supérieur.
+- Maven.
 MySQL.
 Docker (recommandé pour le déploiement).
 Postman pour tester les API.
