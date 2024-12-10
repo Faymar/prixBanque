@@ -16,7 +16,7 @@ PrixBanque est une application bancaire basée sur une architecture de microserv
 
 ### **Configurations requises**
 - Une base de données MySQL fonctionnelle.
-- Ports ouverts : **8081, 8082, 8083, 8084** et **8761**.
+- Ports ouverts : **8080, 8082, 8083, 8084** et **8761**.
 
 ---
 
