@@ -4,6 +4,8 @@ import gestionCompte.prixBanque.gestionCompte.model.Account;
 import gestionCompte.prixBanque.gestionCompte.model.Users;
 import gestionCompte.prixBanque.gestionCompte.repository.UserRepo;
 import gestionCompte.prixBanque.gestionCompte.service.AccountService;
+import gestionCompte.prixBanque.gestionCompte.service.JWTService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,15 +20,22 @@ public class AccountController {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private JWTService jwtService;
+
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createAccount(@RequestBody Account account) {
+    public ResponseEntity<?> createAccount(@RequestBody Account account, HttpServletRequest request) {
         try {
-            String username = SecurityContextHolder.getContext().getAuthentication().getName();
-            Users user = userRepo.findByUsername(username);
+            String token = request.getHeader("Authorization").substring(7);
+            String clientIdString = jwtService.extractUserId(token); // Extraction du clientId sous forme de chaîne
+            Long clientId = Long.valueOf(clientIdString);
+
+            Users user = userRepo.findById(clientId);
             if (user == null) {
                 return ResponseEntity.status(404).body("User not found");
             }

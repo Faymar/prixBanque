@@ -31,7 +31,8 @@ public class SecurityConfig {
 
         return http.csrf(customizer -> customizer.disable()).
                 authorizeHttpRequests(request -> request
-                        .requestMatchers("/accounts/**", "/factures/create").permitAll() // Autoriser l'accès public à ces endpoints
+                        .requestMatchers("/accounts/login", "/accounts/register", "/factures/create").permitAll() // Autoriser l'accès public à ces endpoints
+                        .requestMatchers("/accounts/create").authenticated()
                         .anyRequest().authenticated()).
                 httpBasic(Customizer.withDefaults()).
                 sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
